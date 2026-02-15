@@ -57,6 +57,24 @@
                 transform: translateY(0);
             }
         }
+        .call-pulse {
+            box-shadow: 0 0 0 0 rgba(230, 81, 0, 0.7);
+            animation: pulse-orange 2s infinite;
+        }
+        @keyframes pulse-orange {
+            0% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(230, 81, 0, 0.7);
+            }
+            70% {
+                transform: scale(1);
+                box-shadow: 0 0 0 10px rgba(230, 81, 0, 0);
+            }
+            100% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(230, 81, 0, 0);
+            }
+        }
     </style>
 </head>
 <body class="text-gray-800 antialiased bg-white">
@@ -77,12 +95,13 @@
                 </div>
 
                 <!-- Desktop Menu -->
-                <div class="hidden md:flex space-x-8 items-center">
+                <div class="hidden md:flex space-x-6 items-center">
                     <a href="#home" class="text-gray-600 hover:text-bharat-blue font-medium transition">Home</a>
                     <a href="#services" class="text-gray-600 hover:text-bharat-blue font-medium transition">Legal Areas</a>
-                    <a href="#process" class="text-gray-600 hover:text-bharat-blue font-medium transition">How it Works</a>
+                    <a href="#specialized" class="text-gray-600 hover:text-bharat-blue font-medium transition">Complaints</a>
+                    <a href="#consult" class="text-bharat-orange font-bold hover:text-orange-700 transition flex items-center"><i class="fa-solid fa-headset mr-1"></i> Talk to Lawyer</a>
                     <a href="#emergency" class="text-red-600 hover:text-red-700 font-medium transition"><i class="fa-solid fa-phone-volume mr-1"></i> Emergency</a>
-                    <a href="#get-help" class="bg-bharat-orange hover:bg-orange-700 text-white px-5 py-2.5 rounded-full font-semibold transition shadow-md transform hover:-translate-y-0.5">
+                    <a href="#get-help" class="bg-bharat-blue hover:bg-blue-800 text-white px-5 py-2.5 rounded-full font-semibold transition shadow-md">
                         Get Legal Help
                     </a>
                 </div>
@@ -101,9 +120,10 @@
             <div class="px-4 pt-2 pb-6 space-y-2">
                 <a href="#home" class="block px-3 py-3 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-bharat-blue rounded-md">Home</a>
                 <a href="#services" class="block px-3 py-3 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-bharat-blue rounded-md">Legal Areas</a>
-                <a href="#process" class="block px-3 py-3 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-bharat-blue rounded-md">How it Works</a>
+                <a href="#specialized" class="block px-3 py-3 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-bharat-blue rounded-md">File Complaint</a>
+                <a href="#consult" class="block px-3 py-3 text-base font-bold text-bharat-orange hover:bg-orange-50 rounded-md">Talk to Lawyer</a>
                 <a href="#emergency" class="block px-3 py-3 text-base font-medium text-red-600 hover:bg-red-50 rounded-md">Emergency Help</a>
-                <a href="#get-help" class="block w-full text-center mt-4 bg-bharat-orange text-white px-5 py-3 rounded-lg font-semibold">Get Legal Help</a>
+                <a href="#get-help" class="block w-full text-center mt-4 bg-bharat-blue text-white px-5 py-3 rounded-lg font-semibold">Get Legal Help</a>
             </div>
         </div>
     </nav>
@@ -127,8 +147,8 @@
                     <a href="#get-help" class="bg-bharat-blue text-white px-8 py-4 rounded-lg font-semibold text-lg shadow-lg hover:bg-blue-900 transition flex items-center justify-center gap-2">
                         Submit a Case <i class="fa-solid fa-arrow-right"></i>
                     </a>
-                    <a href="#" class="bg-white text-gray-700 border border-gray-300 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-50 transition flex items-center justify-center gap-2">
-                        <i class="fa-regular fa-handshake"></i> Join as Volunteer
+                    <a href="#consult" class="bg-white text-bharat-orange border border-bharat-orange px-8 py-4 rounded-lg font-semibold text-lg hover:bg-orange-50 transition flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-phone"></i> Talk to Expert
                     </a>
                 </div>
                 
@@ -237,8 +257,62 @@
         </div>
     </section>
 
+    <!-- NEW SECTION: Corporate & Consumer Specialized Portals -->
+    <section id="specialized" class="py-20 bg-gray-50 border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-serif font-bold text-gray-900 mb-4">Specialized Dispute Resolution</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Dedicated channels for complex commercial and consumer-related grievances.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <!-- Consumer Complaint Box -->
+                <div class="bg-white rounded-2xl p-8 shadow-md border-l-8 border-bharat-orange hover:shadow-xl transition">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center text-bharat-orange text-3xl">
+                            <i class="fa-solid fa-bag-shopping"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900">Consumer Complaints</h3>
+                            <span class="bg-orange-100 text-bharat-orange text-xs font-bold px-2 py-1 rounded uppercase tracking-wide">For Citizens</span>
+                        </div>
+                    </div>
+                    <ul class="space-y-3 mb-8 text-gray-600">
+                        <li class="flex items-start"><i class="fa-solid fa-check text-green-500 mt-1 mr-3"></i> Defective goods or poor service quality</li>
+                        <li class="flex items-start"><i class="fa-solid fa-check text-green-500 mt-1 mr-3"></i> Denied insurance claims or refunds</li>
+                        <li class="flex items-start"><i class="fa-solid fa-check text-green-500 mt-1 mr-3"></i> Medical negligence or real estate delays</li>
+                    </ul>
+                    <a href="#get-help" class="block w-full text-center bg-white border-2 border-bharat-orange text-bharat-orange font-bold py-3 rounded-lg hover:bg-orange-50 transition">
+                        File Consumer Grievance
+                    </a>
+                </div>
+
+                <!-- Corporate Complaint Box -->
+                <div class="bg-white rounded-2xl p-8 shadow-md border-l-8 border-bharat-blue hover:shadow-xl transition">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-bharat-blue text-3xl">
+                            <i class="fa-solid fa-building-user"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900">Corporate Complaints</h3>
+                            <span class="bg-blue-100 text-bharat-blue text-xs font-bold px-2 py-1 rounded uppercase tracking-wide">For Businesses</span>
+                        </div>
+                    </div>
+                    <ul class="space-y-3 mb-8 text-gray-600">
+                        <li class="flex items-start"><i class="fa-solid fa-check text-green-500 mt-1 mr-3"></i> B2B contract breaches & non-payment</li>
+                        <li class="flex items-start"><i class="fa-solid fa-check text-green-500 mt-1 mr-3"></i> Intellectual property (IP) theft</li>
+                        <li class="flex items-start"><i class="fa-solid fa-check text-green-500 mt-1 mr-3"></i> Shareholder disputes & corporate fraud</li>
+                    </ul>
+                    <a href="#get-help" class="block w-full text-center bg-white border-2 border-bharat-blue text-bharat-blue font-bold py-3 rounded-lg hover:bg-blue-50 transition">
+                        File Corporate Dispute
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- How It Works -->
-    <section id="process" class="py-20 bg-bharat-light">
+    <section id="process" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-3xl font-serif font-bold text-gray-900 mb-4">How Bharat Jodo Works</h2>
@@ -275,13 +349,48 @@
         </div>
     </section>
 
+    <!-- NEW SECTION: Quick Call / Live Advice -->
+    <section id="consult" class="py-20 bg-bharat-blue relative overflow-hidden">
+        <!-- Decorative bg elements -->
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 bg-blue-700 rounded-full opacity-30"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-60 h-60 bg-blue-900 rounded-full opacity-30"></div>
+        
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8">
+                <div class="text-white flex-1">
+                    <div class="inline-flex items-center px-3 py-1 rounded-full bg-orange-500/20 text-orange-200 border border-orange-500/30 text-xs font-bold mb-4">
+                        <span class="w-2 h-2 bg-orange-500 rounded-full mr-2 animate-pulse"></span> LIVE NOW
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold mb-4">Need Instant Professional Advice?</h2>
+                    <p class="text-blue-100 text-lg mb-6">Skip the wait. Connect with a verified senior legal advisor via audio or video call for immediate consultation.</p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <div class="flex items-center gap-3 text-sm text-blue-200 bg-blue-900/40 px-4 py-2 rounded-lg">
+                            <i class="fa-solid fa-clock"></i> Available 9 AM - 9 PM
+                        </div>
+                        <div class="flex items-center gap-3 text-sm text-blue-200 bg-blue-900/40 px-4 py-2 rounded-lg">
+                            <i class="fa-solid fa-language"></i> English, Hindi, Local
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex-shrink-0 text-center">
+                    <button class="call-pulse bg-bharat-orange text-white text-xl font-bold px-10 py-5 rounded-full hover:bg-orange-700 transition transform hover:scale-105 flex items-center justify-center gap-3 shadow-2xl">
+                        <i class="fa-solid fa-phone"></i>
+                        Call Advisor Now
+                    </button>
+                    <p class="text-blue-200 text-xs mt-4">Free 15-minute preliminary consultation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Intake Form Section -->
-    <section id="get-help" class="py-20 bg-white">
+    <section id="get-help" class="py-20 bg-gray-50">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="bg-white border border-gray-200 rounded-2xl shadow-xl overflow-hidden">
-                <div class="bg-bharat-blue py-6 px-8">
+                <div class="bg-gray-900 py-6 px-8">
                     <h2 class="text-2xl font-bold text-white text-center">Free Legal Guidance Form</h2>
-                    <p class="text-blue-200 text-center text-sm mt-1">We respect your privacy. Your data is secure.</p>
+                    <p class="text-gray-400 text-center text-sm mt-1">We respect your privacy. Your data is secure.</p>
                 </div>
                 
                 <div class="p-8 md:p-10">
@@ -307,6 +416,7 @@
                                 <option value="" disabled selected>Select the type of issue</option>
                                 <option value="cyber">Cyber Crime / Online Fraud</option>
                                 <option value="consumer">Consumer Rights / Refunds</option>
+                                <option value="corporate">Corporate / Business Dispute</option>
                                 <option value="employment">Employment / Salary Issue</option>
                                 <option value="women">Women's Safety / Domestic Violence</option>
                                 <option value="tenant">Tenant / Landlord Dispute</option>
@@ -378,8 +488,8 @@
                     <ul class="space-y-2 text-gray-400 text-sm">
                         <li><a href="#home" class="hover:text-bharat-orange transition">Home</a></li>
                         <li><a href="#services" class="hover:text-bharat-orange transition">Legal Categories</a></li>
+                        <li><a href="#specialized" class="hover:text-bharat-orange transition">File Complaint</a></li>
                         <li><a href="#" class="hover:text-bharat-orange transition">Volunteer Login</a></li>
-                        <li><a href="#" class="hover:text-bharat-orange transition">Donate</a></li>
                     </ul>
                 </div>
 
