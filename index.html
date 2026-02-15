@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bharat Jodo | Nyay Sabke Liye</title>
+    <meta name="description" content="Free legal awareness and advisory platform for Indian citizens.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        bharat: {
+                            blue: '#1e3a8a', // High trust dark blue
+                            orange: '#e65100', // Saffron inspired, high contrast
+                            light: '#f3f4f6',
+                            green: '#15803d'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Merriweather', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Styles for visual polish */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .hero-pattern {
+            background-color: #f8fafc;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%231e3a8a' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body class="text-gray-800 antialiased bg-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md shadow-sm transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <div class="w-10 h-10 bg-bharat-blue rounded-lg flex items-center justify-center text-white">
+                        <i class="fa-solid fa-scale-balanced text-xl"></i>
+                    </div>
+                    <div>
+                        <span class="font-serif font-bold text-2xl text-bharat-blue tracking-tight">Bharat Jodo</span>
+                        <p class="text-xs text-gray-500 font-medium tracking-wide uppercase">Nyay Sabke Liye</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#home" class="text-gray-600 hover:text-bharat-blue font-medium transition">Home</a>
+                    <a href="#services" class="text-gray-600 hover:text-bharat-blue font-medium transition">Legal Areas</a>
+                    <a href="#process" class="text-gray-600 hover:text-bharat-blue font-medium transition">How it Works</a>
+                    <a href="#emergency" class="text-red-600 hover:text-red-700 font-medium transition"><i class="fa-solid fa-phone-volume mr-1"></i> Emergency</a>
+                    <a href="#get-help" class="bg-bharat-orange hover:bg-orange-700 text-white px-5 py-2.5 rounded-full font-semibold transition shadow-md transform hover:-translate-y-0.5">
+                        Get Legal Help
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-bharat-blue focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-lg">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="#home" class="block px-3 py-3 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-bharat-blue rounded-md">Home</a>
+                <a href="#services" class="block px-3 py-3 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-bharat-blue rounded-md">Legal Areas</a>
+                <a href="#process" class="block px-3 py-3 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-bharat-blue rounded-md">How it Works</a>
+                <a href="#emergency" class="block px-3 py-3 text-base font-medium text-red-600 hover:bg-red-50 rounded-md">Emergency Help</a>
+                <a href="#get-help" class="block w-full text-center mt-4 bg-bharat-orange text-white px-5 py-3 rounded-lg font-semibold">Get Legal Help</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-32 pb-20 lg:pt-40 lg:pb-28 hero-pattern relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto fade-in-up">
+                <div class="inline-flex items-center px-3 py-1 rounded-full bg-blue-50 text-bharat-blue text-sm font-semibold mb-6 border border-blue-100">
+                    <span class="w-2 h-2 bg-bharat-orange rounded-full mr-2"></span>
+                    India's Free Legal Awareness Platform
+                </div>
+                <h1 class="text-4xl md:text-6xl font-serif font-bold text-gray-900 leading-tight mb-6">
+                    Justice Should Be <span class="text-bharat-blue">Accessible</span> to <span class="text-bharat-orange underline decoration-4 decoration-orange-200">Everyone</span>.
+                </h1>
+                <p class="text-lg md:text-xl text-gray-600 mb-10 leading-relaxed">
+                    Don't let lack of knowledge or funds stop you from getting justice. 
+                    Bharat Jodo connects you with legal volunteers and simplifies the law for free.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#get-help" class="bg-bharat-blue text-white px-8 py-4 rounded-lg font-semibold text-lg shadow-lg hover:bg-blue-900 transition flex items-center justify-center gap-2">
+                        Submit a Case <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <a href="#" class="bg-white text-gray-700 border border-gray-300 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-50 transition flex items-center justify-center gap-2">
+                        <i class="fa-regular fa-handshake"></i> Join as Volunteer
+                    </a>
+                </div>
+                
+                <!-- Trust Indicators -->
+                <div class="mt-12 pt-8 border-t border-gray-200 flex flex-wrap justify-center gap-8 text-gray-400 grayscale opacity-70">
+                    <div class="flex items-center gap-2"><i class="fa-solid fa-shield-halved"></i> 100% Confidential</div>
+                    <div class="flex items-center gap-2"><i class="fa-solid fa-user-group"></i> 500+ Volunteers</div>
+                    <div class="flex items-center gap-2"><i class="fa-solid fa-clock"></i> 24-48 Hr Response</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency Strip -->
+    <section id="emergency" class="bg-red-50 border-y border-red-100 py-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-3 text-red-700">
+                <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
+                    <i class="fa-solid fa-siren-on text-red-600 animate-pulse"></i>
+                </div>
+                <div>
+                    <h3 class="font-bold text-lg">Emergency Help Needed?</h3>
+                    <p class="text-sm">If you are in immediate danger, do not wait for a form response.</p>
+                </div>
+            </div>
+            <div class="flex flex-wrap gap-3">
+                <a href="tel:100" class="bg-white border border-red-200 text-red-700 px-4 py-2 rounded-md font-bold hover:bg-red-600 hover:text-white transition shadow-sm">
+                    <i class="fa-solid fa-phone mr-2"></i>Police: 100
+                </a>
+                <a href="tel:181" class="bg-red-600 text-white px-4 py-2 rounded-md font-bold hover:bg-red-700 transition shadow-sm">
+                    <i class="fa-solid fa-person-dress mr-2"></i>Women Helpline: 181
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services / Areas of Law -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-serif font-bold text-gray-900 mb-4">Areas We Can Help You With</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">We focus on the most common legal issues faced by citizens. Select a category below to get guidance.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="group p-8 border border-gray-100 rounded-2xl bg-white shadow-sm hover:shadow-xl transition duration-300 hover:-translate-y-1">
+                    <div class="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center text-bharat-blue text-2xl mb-6 group-hover:bg-bharat-blue group-hover:text-white transition">
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Cyber Crime</h3>
+                    <p class="text-gray-600 mb-4">Guidance on online fraud, harassment, data theft, and how to file complaints on the National Cyber Crime Portal.</p>
+                    <a href="#get-help" class="text-bharat-blue font-semibold hover:underline">Get Help <i class="fa-solid fa-arrow-right ml-1 text-xs"></i></a>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="group p-8 border border-gray-100 rounded-2xl bg-white shadow-sm hover:shadow-xl transition duration-300 hover:-translate-y-1">
+                    <div class="w-14 h-14 bg-orange-50 rounded-xl flex items-center justify-center text-bharat-orange text-2xl mb-6 group-hover:bg-bharat-orange group-hover:text-white transition">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Consumer Rights</h3>
+                    <p class="text-gray-600 mb-4">Issues with defective products, service deficiencies, refund disputes, and filing cases in Consumer Forums.</p>
+                    <a href="#get-help" class="text-bharat-orange font-semibold hover:underline">Get Help <i class="fa-solid fa-arrow-right ml-1 text-xs"></i></a>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="group p-8 border border-gray-100 rounded-2xl bg-white shadow-sm hover:shadow-xl transition duration-300 hover:-translate-y-1">
+                    <div class="w-14 h-14 bg-purple-50 rounded-xl flex items-center justify-center text-purple-600 text-2xl mb-6 group-hover:bg-purple-600 group-hover:text-white transition">
+                        <i class="fa-solid fa-person-dress-burst"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Women Protection</h3>
+                    <p class="text-gray-600 mb-4">Domestic violence, workplace harassment, dowry issues, and maintenance rights. Absolute confidentiality assured.</p>
+                    <a href="#get-help" class="text-purple-600 font-semibold hover:underline">Get Help <i class="fa-solid fa-arrow-right ml-1 text-xs"></i></a>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="group p-8 border border-gray-100 rounded-2xl bg-white shadow-sm hover:shadow-xl transition duration-300 hover:-translate-y-1">
+                    <div class="w-14 h-14 bg-green-50 rounded-xl flex items-center justify-center text-green-600 text-2xl mb-6 group-hover:bg-green-600 group-hover:text-white transition">
+                        <i class="fa-solid fa-briefcase"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Employment</h3>
+                    <p class="text-gray-600 mb-4">Unpaid salary, wrongful termination, PF issues, and workplace exploitation guidance.</p>
+                    <a href="#get-help" class="text-green-600 font-semibold hover:underline">Get Help <i class="fa-solid fa-arrow-right ml-1 text-xs"></i></a>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="group p-8 border border-gray-100 rounded-2xl bg-white shadow-sm hover:shadow-xl transition duration-300 hover:-translate-y-1">
+                    <div class="w-14 h-14 bg-indigo-50 rounded-xl flex items-center justify-center text-indigo-600 text-2xl mb-6 group-hover:bg-indigo-600 group-hover:text-white transition">
+                        <i class="fa-solid fa-house-chimney"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Tenant & Landlord</h3>
+                    <p class="text-gray-600 mb-4">Disputes over rent, security deposits, eviction notices, and rental agreements.</p>
+                    <a href="#get-help" class="text-indigo-600 font-semibold hover:underline">Get Help <i class="fa-solid fa-arrow-right ml-1 text-xs"></i></a>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="group p-8 border border-gray-100 rounded-2xl bg-white shadow-sm hover:shadow-xl transition duration-300 hover:-translate-y-1">
+                    <div class="w-14 h-14 bg-gray-100 rounded-xl flex items-center justify-center text-gray-600 text-2xl mb-6 group-hover:bg-gray-800 group-hover:text-white transition">
+                        <i class="fa-solid fa-book-open"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">General Legal Info</h3>
+                    <p class="text-gray-600 mb-4">Don't know where your problem fits? Submit a general query and we will guide you.</p>
+                    <a href="#get-help" class="text-gray-600 font-semibold hover:underline">Get Help <i class="fa-solid fa-arrow-right ml-1 text-xs"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="process" class="py-20 bg-bharat-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-serif font-bold text-gray-900 mb-4">How Bharat Jodo Works</h2>
+                <p class="text-gray-600">Three simple steps to get the guidance you need.</p>
+            </div>
+
+            <div class="relative">
+                <!-- Connector Line (Desktop) -->
+                <div class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-gray-200 -translate-y-1/2 z-0"></div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10 relative z-10">
+                    <!-- Step 1 -->
+                    <div class="bg-white p-8 rounded-xl shadow-md text-center">
+                        <div class="w-16 h-16 bg-bharat-blue text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6 border-4 border-white shadow-lg">1</div>
+                        <h3 class="text-xl font-bold mb-2">Submit Your Problem</h3>
+                        <p class="text-gray-600 text-sm">Fill out the simple form below explaining your situation. You can remain anonymous.</p>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="bg-white p-8 rounded-xl shadow-md text-center">
+                        <div class="w-16 h-16 bg-bharat-blue text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6 border-4 border-white shadow-lg">2</div>
+                        <h3 class="text-xl font-bold mb-2">Volunteer Review</h3>
+                        <p class="text-gray-600 text-sm">Our legal volunteers review your case and identify relevant laws and rights.</p>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="bg-white p-8 rounded-xl shadow-md text-center">
+                        <div class="w-16 h-16 bg-bharat-blue text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6 border-4 border-white shadow-lg">3</div>
+                        <h3 class="text-xl font-bold mb-2">Receive Guidance</h3>
+                        <p class="text-gray-600 text-sm">Within 24-48 hours, receive a simplified guide on your next legal steps or referral.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Intake Form Section -->
+    <section id="get-help" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white border border-gray-200 rounded-2xl shadow-xl overflow-hidden">
+                <div class="bg-bharat-blue py-6 px-8">
+                    <h2 class="text-2xl font-bold text-white text-center">Free Legal Guidance Form</h2>
+                    <p class="text-blue-200 text-center text-sm mt-1">We respect your privacy. Your data is secure.</p>
+                </div>
+                
+                <div class="p-8 md:p-10">
+                    <form id="case-form" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <!-- Name -->
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name (Optional)</label>
+                                <input type="text" id="name" placeholder="John Doe" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-bharat-blue focus:border-bharat-blue transition">
+                            </div>
+                            
+                            <!-- Contact -->
+                            <div>
+                                <label for="contact" class="block text-sm font-medium text-gray-700 mb-1">Email or Phone *</label>
+                                <input type="text" id="contact" required placeholder="To send you the response" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-bharat-blue focus:border-bharat-blue transition">
+                            </div>
+                        </div>
+
+                        <!-- Category -->
+                        <div>
+                            <label for="category" class="block text-sm font-medium text-gray-700 mb-1">Legal Category *</label>
+                            <select id="category" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-bharat-blue focus:border-bharat-blue transition bg-white">
+                                <option value="" disabled selected>Select the type of issue</option>
+                                <option value="cyber">Cyber Crime / Online Fraud</option>
+                                <option value="consumer">Consumer Rights / Refunds</option>
+                                <option value="employment">Employment / Salary Issue</option>
+                                <option value="women">Women's Safety / Domestic Violence</option>
+                                <option value="tenant">Tenant / Landlord Dispute</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <!-- Description -->
+                        <div>
+                            <label for="description" class="block text-sm font-medium text-gray-700 mb-1">Describe your problem *</label>
+                            <textarea id="description" rows="5" required placeholder="Please describe what happened, when it happened, and what kind of help you are looking for..." class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-bharat-blue focus:border-bharat-blue transition"></textarea>
+                        </div>
+
+                        <!-- Consent -->
+                        <div class="flex items-start">
+                            <div class="flex items-center h-5">
+                                <input id="consent" type="checkbox" required class="focus:ring-bharat-blue h-4 w-4 text-bharat-blue border-gray-300 rounded">
+                            </div>
+                            <div class="ml-3 text-sm">
+                                <label for="consent" class="font-medium text-gray-700">I understand that Bharat Jodo provides general guidance, not professional legal representation.</label>
+                            </div>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="w-full bg-bharat-orange text-white font-bold text-lg px-8 py-4 rounded-lg hover:bg-orange-700 transition shadow-md transform active:scale-95 flex justify-center items-center gap-2">
+                            <span>Submit for Review</span>
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </form>
+
+                    <!-- Success Message (Hidden by default) -->
+                    <div id="success-message" class="hidden text-center py-10">
+                        <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center text-green-600 text-3xl mx-auto mb-4">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Request Submitted!</h3>
+                        <p class="text-gray-600 mb-6">Thank you for reaching out. A volunteer will review your case and contact you within 48 hours.</p>
+                        <button onclick="location.reload()" class="text-bharat-blue font-semibold hover:underline">Submit another case</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <!-- Brand -->
+                <div class="col-span-1 md:col-span-1">
+                    <div class="flex items-center gap-2 mb-4">
+                        <i class="fa-solid fa-scale-balanced text-bharat-orange text-2xl"></i>
+                        <span class="font-serif font-bold text-2xl">Bharat Jodo</span>
+                    </div>
+                    <p class="text-gray-400 text-sm mb-6">
+                        Bridging the gap between citizens and justice. Promoting legal literacy across India.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4 border-l-4 border-bharat-orange pl-3">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="#home" class="hover:text-bharat-orange transition">Home</a></li>
+                        <li><a href="#services" class="hover:text-bharat-orange transition">Legal Categories</a></li>
+                        <li><a href="#" class="hover:text-bharat-orange transition">Volunteer Login</a></li>
+                        <li><a href="#" class="hover:text-bharat-orange transition">Donate</a></li>
+                    </ul>
+                </div>
+
+                <!-- Resources -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4 border-l-4 border-bharat-orange pl-3">Resources</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="#" class="hover:text-bharat-orange transition">Know Your Rights</a></li>
+                        <li><a href="#" class="hover:text-bharat-orange transition">Find a Police Station</a></li>
+                        <li><a href="#" class="hover:text-bharat-orange transition">Consumer Forum</a></li>
+                        <li><a href="#" class="hover:text-bharat-orange transition">Cyber Crime Portal</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4 border-l-4 border-bharat-orange pl-3">Contact</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><i class="fa-solid fa-envelope mr-2 text-bharat-orange"></i> help@bharatjodo.in</li>
+                        <li><i class="fa-solid fa-location-dot mr-2 text-bharat-orange"></i> New Delhi, India</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Disclaimer & Copyright -->
+            <div class="border-t border-gray-800 pt-8 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-gray-500 text-xs max-w-2xl">
+                    <span class="font-bold text-gray-300">DISCLAIMER:</span> Bharat Jodo provides general legal information and guidance only. We are not a law firm and this is not a substitute for professional legal advice or court representation.
+                </p>
+                <p class="text-gray-500 text-sm">
+                    &copy; 2025 Bharat Jodo. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // Form Submission Simulation
+        document.getElementById('case-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = this.querySelector('button[type="submit"]');
+            const originalText = btn.innerHTML;
+            
+            // Loading State
+            btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Submitting...';
+            btn.disabled = true;
+
+            // Simulate API call delay
+            setTimeout(() => {
+                this.style.display = 'none';
+                document.getElementById('success-message').classList.remove('hidden');
+                document.getElementById('success-message').classList.add('fade-in-up');
+            }, 1500);
+        });
+
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 20) {
+                nav.classList.add('shadow-md');
+                nav.classList.remove('py-2');
+            } else {
+                nav.classList.remove('shadow-md');
+                nav.classList.add('py-2');
+            }
+        });
+    </script>
+</body>
+</html>
